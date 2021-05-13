@@ -11,6 +11,12 @@
   </head>
 
   <body>
+    <% if session[:current_user_id] %>
+      <p><%= User.find(session[:current_user_id]).name %> is logged in</p> 
+    <% else %>
+      <p>Please Sign in</p>
+    <% end %>
     <%= yield %>
+    <%= link_to 'Log out', reset_path, method: "post" %>
   </body>
 </html>
