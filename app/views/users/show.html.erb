@@ -5,5 +5,25 @@
   <%= @user.name %>
 </p>
 
+<h3> 
+  <strong>
+    Events Authored
+  </strong>
+</h3>
+
+<% @user.events.each do |event|%>
+  <div> 
+    <div> 
+      <strong>Title:</strong>
+      <%= event.name.capitalize %>
+    </div>
+    <div>
+    <strong>Date:</strong>
+      <%= event.date %>
+    </div>
+  </div><br>
+  
+<% end %><br>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

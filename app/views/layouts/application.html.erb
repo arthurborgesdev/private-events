@@ -17,6 +17,9 @@
       <p>Please Sign in</p>
     <% end %>
     <%= yield %>
-    <%= link_to 'Log out', reset_path, method: "post" %>
+    <% if session[:current_user_id] %>
+      <%= link_to 'New Event', new_event_path %>
+      <%= link_to 'Log out', reset_path, method: "post" %>
+    <% end %>
   </body>
 </html>
