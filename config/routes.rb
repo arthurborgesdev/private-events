@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :sessions
   resources :events
   post '/reset', to: 'sessions#reset', as: 'reset' 
-  root to: "users#index"
+  root to: "events#index"
 end

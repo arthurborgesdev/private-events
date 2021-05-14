@@ -29,11 +29,5 @@
     <div class="actions">
         <%= form.submit %>
     </div>
-
-    <% if session[:current_user_id] %>
-      <%= link_to 'Log out', reset_path, method: "post" %>
-    <% else %>
-      <%= link_to 'sign in', new_user_path, method: "get" %>
-    <% end %>
 <% end %>
     
