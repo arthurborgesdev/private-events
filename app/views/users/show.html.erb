@@ -5,25 +5,72 @@
   <%= @user.name %>
 </p>
 
-<h3> 
-  <strong>
-    Events Authored
-  </strong>
-</h3>
-
-<% @user.events.each do |event|%>
-  <div> 
-    <div> 
-      <strong>Title:</strong>
-      <%= event.name.capitalize %>
-    </div>
-    <div>
-    <strong>Date:</strong>
-      <%= event.date %>
-    </div>
-  </div><br>
+<div>
+  <h3> 
+    <strong>
+      Events Authored
+    </strong>
+  </h3>
   
-<% end %><br>
+  
+  <% @user.events.each do |event|%>
+    <div> 
+      <div> 
+        <strong>Title:</strong>
+        <%= event.name.capitalize %>
+      </div>
+      <div>
+      <strong>Date:</strong>
+        <%= event.date %>
+      </div>
+    </div><br>
+  <% end %><br>
+</div>
+
+<% unless @user.events.past.empty? %>
+  <div>
+    <h3> 
+      <strong>
+        Previous Events
+      </strong>
+    </h3>
+    <% @user.events.past.each do |attended| %>
+      <div> 
+        <div> 
+          <strong>Title:</strong>
+          <%= attended.name.capitalize %>
+        </div>
+        <div>
+          <strong>Date:</strong>
+          <%= attended.date %>
+        </div>
+      </div><br>
+    <% end %> 
+  </div>
+<%end %>
+
+<% unless @user.events.upcoming.empty? %>
+  <div>
+    <h3> 
+      <strong>
+        Upcoming Events
+      </strong>
+    </h3>
+    <% @user.events.upcoming.each do |scheduled| %>
+      <div> 
+        <div> 
+          <strong>Title:</strong>
+          <%= scheduled.name.capitalize %>
+        </div>
+        <div>
+          <strong>Date:</strong>
+          <%= scheduled.date %>
+        </div>
+      </div><br>
+    <% end %> 
+  </div>
+<%end %>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
