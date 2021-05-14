@@ -24,6 +24,11 @@
     <strong>Description:</strong>
       <%= @event.description %>
     </div>
+    <strong>Attendants:</strong>
+      <% @event.attendants.each do |attendant| %>
+        <p><%= attendant.name %></p>
+      <% end %>
+    </div>
   </div><br>
 
 <%= link_to 'Edit', edit_user_path(@event) %> |
