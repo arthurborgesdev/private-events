@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   resources :sessions
   resources :events
   post '/reset', to: 'sessions#reset', as: 'reset' 
+  get '/upcoming', to: 'events#upcoming', as: 'upcoming'
+  get '/past', to: 'events#past', as: 'past'
   root to: "events#index"
 end

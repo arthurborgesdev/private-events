@@ -1,0 +1,23 @@
+<div>
+    <h3> 
+      <strong>
+        Previous Events
+      </strong>
+    </h3>
+    <% @past_events.each do |event| %>
+      <div>
+        <div> 
+            <strong>Title:</strong>
+            <%= event.name.capitalize %>
+        </div>
+        <div>
+            <strong>Date:</strong>
+            <%= event.date %>
+        </div>
+        <div>
+            <strong>Description:</strong>
+            <%= event.description %>
+        </div>
+      </div><br>
+    <% end %>
+</div>

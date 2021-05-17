@@ -3,8 +3,19 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
+  def upcoming
+    @upcoming_events = Event.upcoming
+  end
+
+  def past
+    @past_events = Event.past
+  end
+
   def show
     @event = Event.find(params[:id])
+    @created_events = User.find(session[:current_user_id]).events
+    @past_events = User.find(session[:current_user_id]).scheduled_events.past
+    @upcoming_events = User.find(session[:current_user_id]).scheduled_events.past
   end
 
   def new
@@ -14,7 +25,7 @@ class EventsController < ApplicationController
   def edit; end
 
   def create
-    @event = User.find(session[:current_user_id]).events.new(event_params)
+    @event = User.find(session[:current_user_id]).events.build(event_params)
 
     respond_to do |format|
       if @event.save
