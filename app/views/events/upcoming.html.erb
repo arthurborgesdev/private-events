@@ -1,0 +1,23 @@
+<div>
+    <h3> 
+      <strong>
+        Upcoming Events
+      </strong>
+    </h3>
+    <% @upcoming_events.each do |event| %>
+      <div>
+        <div> 
+            <strong>Title:</strong>
+            <%= event.name.capitalize %>
+        </div>
+        <div>
+            <strong>Date:</strong>
+            <%= event.date %>
+        </div>
+        <div>
+            <strong>Description:</strong>
+            <%= event.description %>
+        </div>
+      </div><br>
+    <% end %>
+</div>
