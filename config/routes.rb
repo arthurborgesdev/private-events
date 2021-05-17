@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   get '/upcoming', to: 'events#upcoming', as: 'upcoming'
   get '/past', to: 'events#past', as: 'past'
   post '/attend/:id', to: 'events#attend', as: 'attend'
+  get '/invite', to: 'users#invite', as: 'invite'
   root to: "events#index"
 end

@@ -1,0 +1,9 @@
+<%= form_with url: "/events", method: :get do |form| %>
+  <%= form.label :user_id, "Choose a user" %>
+  <%= form.collection_select :user_id, User.order(:name), :id, :name %>
+  <%= form.label :event_id, "Choose an event" %>
+  <%= form.collection_select :event_id, Event.order(:name), :id, :name %>
+  <br>
+  <br>
+  <%= form.submit %>
+<% end %>
