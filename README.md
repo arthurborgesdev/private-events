@@ -63,7 +63,7 @@ For further knowledge on these topics, check [Scaffold](https://guides.rubyonrai
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/jmontanholi/members_only_rails_project/issues).
+Feel free to check the [issues page](https://github.com/arthurborgesdev/private-events/issues).
 
 ## Show your support
 
