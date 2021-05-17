@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<div> 
+
+    
+      <div> 
+        <strong>Author:</strong>
+        <% if @event.author %>
+          <%= User.find(@event.author_id).name %>
+        <% else%>
+          Destroyed User
+        <% end %>
+      </div>
+    
+    <div> 
+      <strong>Title:</strong>
+      <%= @event.name %>
+    </div>
+    <div>
+    <strong>Date:</strong>
+      <%= @event.date %>
+    </div>
+    <div>
+    <strong>Description:</strong>
+      <%= @event.description %>
+    </div>
+    <strong>Attendants:</strong>
+      <% @event.attendants.each do |attendant| %>
+        <p><%= attendant.name %></p>
+      <% end %>
+    </div>
+    <% if session[:current_user_id] %>
+      <td><%= link_to 'Attend', attend_path, method: 'post' %>
+    <% end %>
+  </div><br>
+
+<%= link_to 'Edit', edit_user_path(@event) %> |
+<%= link_to 'Back', events_path %>
