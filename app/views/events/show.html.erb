@@ -29,6 +29,9 @@
         <p><%= attendant.name %></p>
       <% end %>
     </div>
+    <% if session[:current_user_id] %>
+      <td><%= link_to 'Attend', attend_path, method: 'post' %>
+    <% end %>
   </div><br>
 
 <%= link_to 'Edit', edit_user_path(@event) %> |

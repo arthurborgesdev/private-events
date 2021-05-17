@@ -27,14 +27,14 @@
   <% end %><br>
 </div>
 
-<% unless @user.events.past.empty? %>
+<% unless @user.scheduled_events.past.empty? %>
   <div>
     <h3> 
       <strong>
         Previous Events
       </strong>
     </h3>
-    <% @user.events.past.each do |attended| %>
+    <% @user.scheduled_events.past.each do |attended| %>
       <div> 
         <div> 
           <strong>Title:</strong>
@@ -49,14 +49,14 @@
   </div>
 <%end %>
 
-<% unless @user.events.upcoming.empty? %>
+<% unless @user.scheduled_events.upcoming.empty? %>
   <div>
     <h3> 
       <strong>
         Upcoming Events
       </strong>
     </h3>
-    <% @user.events.upcoming.each do |scheduled| %>
+    <% @user.scheduled_events.upcoming.each do |scheduled| %>
       <div> 
         <div> 
           <strong>Title:</strong>

@@ -11,6 +11,11 @@ class EventsController < ApplicationController
     @past_events = Event.past
   end
 
+  def attend
+    @event = Event.find(params[:id])
+    @event.attendants << User.find(session[:current_user_id])
+  end
+
   def show
     @event = Event.find(params[:id])
     @created_events = User.find(session[:current_user_id]).events

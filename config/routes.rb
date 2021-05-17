@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   post '/reset', to: 'sessions#reset', as: 'reset' 
   get '/upcoming', to: 'events#upcoming', as: 'upcoming'
   get '/past', to: 'events#past', as: 'past'
+  post '/attend/:id', to: 'events#attend', as: 'attend'
   root to: "events#index"
 end
